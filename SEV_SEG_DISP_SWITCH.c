@@ -1,0 +1,26 @@
+#include <AT89s52.h>
+#define SEV_SEG P0
+#define SW P1
+int arr[10]={0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0xF8,0x80,0x90};
+int arr1[8]={0xFE,0xFD,0xFB,0xF7,0xEF,0xDF,0xBF,0x7F};
+void main()
+{
+  SW=0xFF;
+  SEV_SEG=0xFF;
+  while(1)
+  {
+    int s,c;
+    s=SW;
+    for(c=0;c<8;c++)
+    {
+      if(s==arr1[c])
+      {
+	SEV_SEG=arr[c];
+	break;
+      }
+      else{
+        SEV_SEG=0xFF;
+      }
+    }
+  }
+}
