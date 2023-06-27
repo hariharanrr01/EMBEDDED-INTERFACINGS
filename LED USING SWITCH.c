@@ -1,0 +1,17 @@
+#include <AT89s52.h>
+#define LED P2_4
+#define ON 0
+#define OFF 1
+#define SW P3_3
+#define INPUT 1
+void main()
+{
+__bit status;	/*INITIALIZE A BIT VARIABLE*/
+LED=OFF;	/*TURN ON THE LED*/
+SW=INPUT;	/*CONFIGURE THE PORT PIN CONNECTED TO SWITCH AS INPUT */
+while(1)	/*EXECUTE BELOW LINES IN SUPER LOOP*/
+{
+status=SW;	/*READ THE SWITCH AND STORE THE LOGIC TO A VARIABLE*/
+LED=status;	/*WRITE THE LOGIC TO THE LED*/
+}
+}
