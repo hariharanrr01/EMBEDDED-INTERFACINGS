@@ -41,7 +41,7 @@ void i2c_write(char b)  /* Write function */
   {
  for(i=0;i<8;i++)
  {
-  if((b&(0x80>>i))!=0)
+  if((b)&(0x80>>i)!=0)
   {
     SDA=1;
   }
